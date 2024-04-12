@@ -4,11 +4,17 @@ import 'package:ez_slicing/views/ui2_view.dart';
 import 'package:ez_slicing/views/ui3_view.dart';
 import 'package:ez_slicing/views/ui4_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 RxInt navbarIndex = 0.obs;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+
   runApp(const MainApp());
 }
 
